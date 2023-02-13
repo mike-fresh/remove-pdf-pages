@@ -24,7 +24,6 @@ class PdfPageRemover:
         self.entry_box.bind("<Key>", lambda event: self.key_pressed(event))
         self.button = tk.Button(self.window, text="OK", command=self.submit)
         self.button.pack(pady=10)
-        self.window.mainloop()
 
     def submit(self):
         self.pages_to_remove = self.entry_box.get()
@@ -77,3 +76,4 @@ if __name__ == "__main__":
         print("Usage: remove-pdf-pages.py file1.pdf file2.pdf ...")
         sys.exit(1)
     app = PdfPageRemover(args)
+    app.window.mainloop()
